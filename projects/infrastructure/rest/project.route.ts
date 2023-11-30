@@ -12,6 +12,7 @@ router.get("/",async (req, res) => {
         const projects = await projectRepository.getAllProjects();
         res.json(projects);
     }catch(error){
+        console.log(error)
         res.status(500).json({error : "Internal error"})
     }
 });

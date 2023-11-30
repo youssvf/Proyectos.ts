@@ -17,7 +17,7 @@ export default class ProjectRepositoryMongoDB implements UserRepository{
         return projects;
     }
 
-     async getProjectById(id: string): Promise<Project | undefined> {
+    async getProjectById(id: string): Promise<Project | undefined> {
         const objectId = new ObjectId(id);
         const projectFromDB = await collections.projects.findOne({_id: objectId})
         if(!projectFromDB) return undefined;
